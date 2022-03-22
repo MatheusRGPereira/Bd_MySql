@@ -7,7 +7,7 @@ id bigint AUTO_INCREMENT,
 classe varchar(255),
 skill varchar(255),
 arma varchar(255),
-PRIMARY KEY(id)
+primary key(id)
 );
 INSERT INTO tb_classes (classe,skill,arma)
 VALUES ("Mago","Mar de chamas","Cajado");
@@ -44,8 +44,8 @@ vida int,
 cultivo varchar(255),
 raca varchar(255),
 classes_id bigint,
-PRIMARY KEY (id),
-FOREIGN KEY(classes_id)  REFERENCES tb_classes(id)
+primary key(id),
+foreign key (classes_id)  REFERENCES tb_classes(id)
 );
 
 INSERT INTO tb_personagens (nome, ataque,defesa,vida,cultivo,raca,classes_id)
@@ -85,10 +85,10 @@ VALUES ("Lux",2500,2500,3500,"Demonio","Humana",1);
  SELECT * FROM tb_personagens WHERE nome like "%c%";
  
  -- Tabela personagens e classes junto
-SELECT * FROM tb_personagens INNER JOIN tb_classes ON tb_classes.id = tb_personagens.classes_id;
+SELECT * FROM tb_personagens inner join tb_classes ON tb_classes.id = tb_personagens.classes_id;
  
  -- Inner join só com arqueiros
-SELECT * FROM tb_personagens INNER JOIN tb_classes ON tb_classes.id = tb_personagens.classes_id
+SELECT * FROM tb_personagens inner join tb_classes ON tb_classes.id = tb_personagens.classes_id
 WHERE tb_classes.classe = "arqueiro";
 
  
