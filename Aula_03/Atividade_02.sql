@@ -68,14 +68,19 @@ VALUES ("Banana","Chocolate","","Leite condensado",55.00,4);
 
 -- todas as pizzas
 SELECT * FROM tb_produto;
+
 -- Preços acima de 45
 SELECT * FROM tb_produto WHERE preco > 45.00;
+
 -- Preco entre 29 e 60
 SELECT * FROM tb_produto WHERE PRECO BETWEEN 29 AND 60;
+
 -- pizza com o a letra c
 SELECT * FROM tb_produto WHERE sabor like "%c%";
+
 -- junção das tabelas
 SELECT * FROM tb_produto INNER JOIN tb_categoria on tb_categoria.id = tb_produto.categoria_id;
+
 -- todas as pizzas doce
 SELECT * FROM tb_produto INNER JOIN tb_categoria on tb_categoria.id = tb_produto.categoria_id
 WHERE tb_categoria.tipo= "Doce";
